@@ -1,0 +1,30 @@
+a="Hello World"
+f=77
+b=20.0
+c=7
+d=10
+e=21
+_d=45
+print(float(c))
+print(str(b))
+print(int(f))
+print(int(b))
+print(c+d)
+print(c-d)
+print(e/c)
+print(e//c)
+print(d%c)
+print(7**3)
+print(c==d)
+print(c!=e)
+print(d>c)
+print(d>=c)
+print(d<e)
+print(d<=e)
+print(d>c and e%7==0)
+print(c>d or e%7==0)
+print(not d>c and e%7==0)
+print(a+a)
+print(c+d)
+print(int(f)+c)
+print(a*3)
