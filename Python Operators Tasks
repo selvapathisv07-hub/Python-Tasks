@@ -1,0 +1,90 @@
+#Task - Write a program to:
+#Take two integers a and b
+#Print:
+#Sum
+#Difference
+#Product
+#Division
+#Modulus
+#Swapping using bitwise operators without using 3 rd variable
+
+a=int(input("Enter a number: "))
+b=int(input("Enter a number: "))
+print(a)
+print(b)
+print("The sum of the numbers is",a+b)
+print("The difference of the numbers is",a-b)
+print("The product of the numbers is",a*b)
+print("The division of the numbers is",a/b)
+print("The modulus of the numbers is",a%b)
+a=a^b
+b=a^b
+a=a^b
+print(a)
+print(b)
+
+#Task - To find last 2 digit of the given number
+
+num=input("Enter a number: ")
+rev=num[::-1]
+print(rev[0])
+print(rev[1])
+
+#Task - To find middle digit of the number
+
+num1=input("Enter the number: ")
+count=0
+for i in num1:
+    count+=1
+if count%2==0:
+    print(num1[(count-2)//2],num1[count//2])
+else:
+    print(num1[(count-1)//2])
+
+
+#Task - Write a program to take a five-digit number as input, square the middle digit and print number and the square
+
+num2=input("Enter a 5 digit number: ")
+mid=int(num2[2])
+print("The square of the middle digit is",mid**2)
+print("The number is",num2)
+print("The square of the number is",int(num2)**2)
+
+#Task - To find last digit of the number
+num3=input("Enter the number: ")
+rev_num=num3[::-1]
+print("The last digit of the number is",rev_num[0])
+
+#Task - Write a Program to Find the Square Root
+
+num4=int(input("Enter the number: "))
+print("The square root of the number is",num4**0.5)
+
+
+#Task - Write a Program to Calculate the Area of a Triangle
+
+s1=int(input("Enter the base length: "))
+s2=int(input("Enter the height length: "))
+print("The area of the triangle is",0.5*s1*s2)
+
+#Task - Write a Program to Convert Kilometers to Miles
+
+num5=int(input("Enter the kilometers: "))
+print("The miles is equal to",num5*0.63,"miles")
+
+#Task - Write a Program to Convert Celsius To Fahrenheit
+
+num6=int(input("Enter the number: "))
+Farenheit=(num6*9//5)+32
+print("The temperature in Farenheit is",Farenheit)
+
+#Task - Write a Program to Solve Quadratic Equation
+a = int(input("Enter value for a: "))
+b = int(input("Enter value for b: "))
+
+formula_1 = (a + b) ** 2
+formula_2 = (a - b) ** 2
+formula_3 = (a ** 2) - (b ** 2)
+print("(a + b)^2 =", formula_1)
+print("(a - b)^2 =", formula_2)
+print("a^2 - b^2 =", formula_3)
