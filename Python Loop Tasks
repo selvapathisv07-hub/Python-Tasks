@@ -1,0 +1,152 @@
+#Task - print number 1 to 100 interms of 5
+
+for i in range(1,21):
+    print(i*5)
+
+#Task - print number 1 to 100 interms of 5
+
+name=input("Enter the name: ")
+for i in name[::-1]:
+    print(i)
+
+#Task - Write a Python program that accepts a string and calculates the number of digits and letters.
+
+string=input("Enter a word: ")
+dig=0
+alph=0
+for i in string:
+    if i.isalpha():
+        alph+=1
+    elif i.isdigit():
+        dig+=1
+print("The number of digits in the word is",dig)
+print("The number of letter in the word is",alph)
+
+#Task - display odd numbers between 1 to 50
+
+for i in range(1,51,2):
+    print(i)
+
+#Task - Write a Python program to calculate the sum and average of n integer numbers.
+
+num=int(input("Enter a number: "))
+add=0
+count=0
+for i in range(1,num+1):
+    add+=i
+    count+=1
+print("The sum is",add)
+print("The average is",add/count)
+
+
+#Task - Write a Python program to create the multiplication table (from 1 to 10) of a number.
+
+
+num1=int(input("Enter the multiplication table wanted: "))
+for i in range(1,11):
+    print(num1,"x",i,"=",i*num1)
+
+#Task - print middle letter of string if string length is even print middle two letter
+
+string1=input("Enter a word: ")
+count=0
+for i in string1:
+    count+=1
+print(count)
+if count%2!=0:
+    print(string1[(count-1)//2])
+else:
+    print(string1[(count-1)//2],string1[count//2])
+
+
+#Fibonacci series
+a=0
+b=1
+for i in range(0,11):
+    print(a)
+    a,b=b,a+b
+    
+#Task - Calculate the sum of all numbers from 1 to a given number
+n=int(input("Enter a number: "))
+co=0
+for i in range (1,n+1):
+    co+=i
+print(co)
+
+
+#Task - Display numbers from -10 to -1 using for loop
+
+for i in range(-10,0):
+    print(i)
+
+
+#Task - Print First 10 natural numbers using while loop
+c=1
+while c<=10:
+    print(c)
+    c+=1
+
+
+#Task - Find the factorial of a given number
+
+num3=int(input("Enter a number: "))
+c=1
+for i in range(num3,1,-1):
+    c*=i
+print(c)
+
+#Task - Calculate the cube of all numbers from 1 to a given number
+
+num4=int(input("Enter a number: "))
+for i in range(1,num4+1):
+    print(i**3)
+
+
+#Task - Reverse a given integer number
+
+num5=input("Enter a number:  ")
+for i in num5[::-1]:
+    print(i)
+
+#Task - Write a program to display all prime numbers within a range
+
+for m in range(2,101):
+    isprime=True
+    for i in range(2,(int(m**0.5)+1)):
+        if m%i==0:
+            isprime=False
+    if isprime:
+        print(m,end=" ")
+
+#Task - Write a while loop statement to print the following series 105, 98, 91 ………7
+
+c=105
+while c<=105:
+    print(c)
+    c-=7
+    if c==0:
+        break
+
+
+#Task - Write for loop statement to print the following series: 10, 20, 30 … … 300
+
+for i in range(1,31):
+    print(i*10)
+
+
+#Task - Write a program to print first 20 natural number in reverse order using while loop
+a=20
+while True:
+    print(a)
+    a-=1
+    if a==0:
+        break
+
+
+#Task - Write a program to find the sum of the digits of a number accepted from the user
+
+num7 =input("Enter a number: ")
+count=0
+for i in num7:
+       count+=int(i)
+print(count)
