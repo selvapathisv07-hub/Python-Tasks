@@ -328,7 +328,7 @@ elif mark1>74 and mark1<=100:
 
 #Task - Classify character (uppercase, lowercase, digit, special)
 
-sen=input("Enter the characters: ")
+sen=input("Enter the character: ")
 if sen.isupper():
     print("Uppercase")
 elif sen.islower():
@@ -337,3 +337,124 @@ elif sen.isdigit():
     print("Digit")
 elif not sen.isalnum():
     print("Special")
+
+#Task - Check if a number is positive → then check if it is even or odd
+
+n19=int(input("Enter the number: "))
+if n19>0:
+    print("It is a positive number")
+    if n19%2==0:
+        print("It is even number")
+    else:
+        print("It is odd number")
+elif n19==0:
+    print("It is zero")
+else:
+    print("It is a negative number")
+
+
+#Task - Check if student passed all subjects → then check if eligible for distinction (average ≥ 75).
+
+sub1=int(input("Enter the sub 1 marks: "))
+sub2=int(input("Enter the sub 2 marks: "))
+sub3=int(input("Enter the sub 3 marks: "))
+avg=(sub1+sub2+sub3)//3
+if sub1>=33 and sub2>=33 and sub3>=33:
+    if avg>=75:
+        print("The student is eligible for distinction")
+    else:
+        print("The student is not eligibke for distinction")
+else:
+    print("Fail")
+
+
+#Task - Check if age ≥ 18 → then check if user has driving license
+
+age1=int(input("Enter your age: "))
+if age1>=18:
+    drive=input("Do you have license: (yes/no) ")
+    if drive.lower()=="yes":
+        print("The user has driving license")
+    elif drive.lower()=="no":
+        print("The user has no driving license")
+else:
+    print("The user's age is below 18")
+
+
+#Task - Check if login username is correct → then check if password is correct.
+
+Username="Dubblin"
+Password="2a3s4d8gjd"
+usern=input("Enter the username: ")
+passw=input("Enter the password: ")
+if usern==Username:
+    print("Valid Username")
+else:
+    print("Invalid Username")
+if passw==Password:
+    print("Valid Password")
+else:
+    print("Invalid Password")
+
+
+#Task - Check if number is divisible by 5 → then check if also divisible by 10.
+
+n20=int(input("Enter the number: "))
+if n20%5==0 and n20%10!=0:
+    print("The number is only divisible by 5")
+elif n20%5==0 and n20%10==0:
+    print("The number is divisible by both 5 and 10")
+
+
+#Task - Check if year is divisible by 4 → then check leap year conditions (divisible by 100 and 400).
+
+year1=int(input("Enter the year: "))
+if year1%4==0:
+    if year1%100!=0 or year1%400==0:
+        print("Leap year")
+    else:
+        print("Non Leap Year")
+else: print("Non Leap Year")
+
+
+#Task - Check if salary > 30,000 → then check if experience > 5 years for bonus
+
+salary=int(input("Enter the salary: "))
+exp=int(input("Enter the experience: "))
+if salary>30000:
+    print("Salary greater than 30000")
+else:
+    print("Salary lesser than 30000")
+if exp>5:
+    print("Experience is more than 5 years")
+else:
+    print("Experience is less than 5 years")
+
+
+#Task - Check if account balance > 0 → then check if withdrawal amount ≤ balance.
+
+bal=986565
+if bal>0:
+    withdraw=int(input("Enter the withdrawal amount: "))
+    if withdraw<=bal:
+        bal-=withdraw
+        print("Withdrawal successful")
+        print(f"The balance amount in the account is {bal}")
+    else:
+        print("Withdrawal not possible as it exceeds your account balance")
+
+
+#Task - Check if temperature > 0 → then check if less than 20 (Cold category).
+
+Temp=int(input("Enter the temperature: "))
+if Temp>0:
+    if Temp<20:
+        print("Cold")
+
+
+#Task - Check if marks ≥ 35 → then check if marks ≥ 90 (Topper)
+
+Mark1=int(input("Enter the marks: "))
+if Mark1>=35:
+    if Mark1>=90:
+        print("Topper")
