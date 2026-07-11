@@ -1,0 +1,339 @@
+#Task - Check if number is greater than 100
+
+n=int(input("Enter a number: "))
+if n>100:
+    print("The number is greater than 100")
+elif n==100:
+    print("The number is equal to 100")
+else:
+    print("The number is lesser than 100")
+
+#Task - Check if number is less than 0
+
+n1=int(input("Enter a number: "))
+if n1<0:
+    print("The number is lesser than 0")
+elif n1==0:
+    print("The number is equal to 0")
+else:
+    print("The number is greater than 0")
+
+#Task - Check if a character is ‘A’
+
+s=input("Enter a letter: ")
+if s=="A":
+    print("Valid")
+else:
+    print("Invalid")
+
+#Task - Check if a number is divisible by 7
+
+n2=int(input("Enter a number: "))
+if n2%==0:
+    print("The number is divisible by 7")
+else:
+    print("The number is not divisible by 7")
+
+#Task - Check if marks are exactly 100
+
+mark = int(input("Enter the marks: "))
+if mark==100:
+    print("Valid")
+else:
+    print("Invalid")
+
+#Task - Check if a string length is more than 5
+
+s1=input("Enter a sentence: ")
+if len(s1)>5:
+    print("Valid")
+else:
+    print("Invalid")
+
+#Task - Check if a number ends with digit 5
+
+n3=input("Enter a number: ")
+if n3.endswith('5'):
+    print("Valid")
+else:
+    print("Invalid")
+
+#Task - Check if salary is equal to 25,000
+
+sal=int(input("Enter the salary: "))
+if sal==25000:
+    print("True")
+else:
+    print("False")
+
+
+#Task - Check if user entered correct PIN (only check, no else)
+
+user_pin=12345
+pin=int(input("Enter the pin: "))
+if pin==user_pin:
+    print("Correct")
+
+
+#Task - Check if number is greater than 50 or not
+
+n4=int(input("Enter a number: "))
+if n4>50:
+    print("The number is greater than 50")
+else:
+    print("The number is lesser than 50")
+
+
+#Task - Check if number is divisible by 9 or not
+
+n5=int(input("Enter a number: "))
+if n5%9==0:
+    print("The number is divisible by 9")
+else:
+    print("The number is not divisible by 9")
+
+
+#Task - Compare two strings (equal or not)
+
+s2=input("Enter a word: ")
+s3="abcd"
+if s2==s3:
+    print("True")
+else:
+    print("False")
+
+#Task - Check if age is above 60 (senior) or not
+
+age=int(input("Enter the age: "))
+if age>60:
+    print("Senior")
+else:
+    print("Junior")
+
+
+#Task - Check if number is two-digit or not
+
+s4=input("Enter a number: ")
+if s4.isdigit() and len(s4)==2:
+    print("It is a two digit number")
+else:
+    print("It is not a two digit number")
+
+
+#Task - Check if character is alphabet or no
+
+s5=input("Enter the characters: ")
+if s5.isalpha():
+    print("It is alphabets")
+elif s5.isdigit():
+    print("It is number")
+elif s5.isalnum():
+    print("It is contains both alphabets and numbers")
+else:
+    print("It contains special characters")
+
+
+#Task - Check if total purchase > 1000 for free delivery
+
+purchase=int(input("Enter the total purchase: "))
+if purchase>1000:
+    print("Free delivery")
+else:
+    print("No free delivery")
+
+
+#Task - Check if student attendance ≥ 75% or not
+
+n6=int(input("Enter the number days the student was present: "))
+n7=int(input("Enter the total number of school days: "))
+avg=(n6/n7)*100
+if avg>=75:
+    print("Consistent")
+else:
+    print("Inconsistent")
+
+
+#Task - Check if username matches stored username
+
+user=fdxgcvhjb
+iuser=input("Enter the username: ")
+if iuser==user:
+    print("Valid")
+else:
+    print("Invalid")
+
+
+#Task - Check if number is multiple of 4 or not
+
+n8=int(input("Enter a number: "))
+if n8%4==0:
+    print("The number is a multiple of 4")
+else:
+    print("The number is not a multiple of 4")
+
+
+#Task - Check if password equals "admin123"
+
+password="admin123"
+u_pass=input("Enter the password: ")
+if u_pass==password:
+    print("Valid")
+else:
+    print("Invalid")
+
+
+#Task - Determine season based on month number
+
+n9=int(input("Enter the month number: "))
+if n9>0 and n9<5:
+    print("Season 1")
+elif n9>4 and n9<8:
+    print("Season 2")
+elif n9>7 and n9<13:
+    print("Season 3")
+
+
+#Task - Find smallest of three numbers
+
+n10=int(input("Enter the number: "))
+n11=int(input("Enter the number: "))
+n12=int(input("Enter the number: "))
+if n10<n11 and n10<n12:
+    print("The smallest number is",n10)
+elif n11<n10 and n11<n12:
+    print("The smallest number is",n11)
+elif n12<n10 and n12<n11:
+    print("The smallest number is",n12)
+
+
+#Task - Assign performance rating (Excellent, Good, Average, Poor)
+
+rating=float(input("Enter the rating: "))
+if rating>0 and rating<2:
+    print("Poor")
+elif rating>=2 and rating<3.5:
+    print("Average")
+elif rating>=3.5 and rating<4.5:
+    print("Good")
+elif rating>=4.5 and rating<=5:
+    print("Excellent")
+
+
+#Task - Find largest among four numbers
+
+n13=int(input("Enter the number: "))
+n14=int(input("Enter the number: "))
+n15=int(input("Enter the number: "))
+n16=int(input("Enter the number: "))
+if n13>n14 and n13>n15 and n13>n16 :
+    print("The largest number is",n13)
+elif n14>n13 and n14>n15 and n14>n16 :
+    print("The largest number is",n14)
+elif n15>n13 and n15>n14 and n15>n16 :
+    print("The largest number is",n15)
+elif n16>n13 and n16>n14 and n16>n15 :
+    print("The largest number is",n16)
+
+
+#Task - Classify temperature (Freezing, Cold, Warm, Hot)
+
+temp=int(input("Enter the temperature: "))
+if temp<=0:
+    print("Freezing")
+elif temp>0 and temp<=20:
+    print("Cold")
+elif temp>20 and temp<=40:
+    print("Warm")
+elif temp>40:
+    print("Hot")
+
+
+#Task - ATM balance check / withdraw / deposit options
+
+ATM=516521
+print(f"The ATM balance is {ATM}")
+user_atm=input("Enter the method: ")
+if user_atm=="withdraw":
+    withdraw=int(input("Enter the amount: "))
+    ATM=ATM-withdraw
+    print(f"The balance amount is {ATM}")
+elif user_atm=="deposit":
+    deposit=int(input("Enter the amount: "))
+    ATM+=deposit
+    print(f"The balance amount is {ATM}")
+
+
+#Task - Check number range (0–10, 11–50, 51–100, >100)
+
+n17=int(input("Enter the number: "))
+if n17>=0 and n17<=10:
+    print("0-10")
+elif n17>=11 and n17<=50:
+    print("11-50")
+elif n17>=51 and n17<=100:
+    print("51-100")
+elif n17>100:
+    print(">100")
+
+#Task - Identify input as positive, negative, or zero
+
+n18=int(input("Enter the number: "))
+if n18>0:
+    print("Positive")
+elif n18==0:
+    print("Zero")
+elif n18<0:
+    print("Negative")
+
+
+#Task - Check cricket score level (Duck, Half-century, Century)
+
+score=int(input("Enter the score: "))
+if score==0:
+    print("Duck")
+elif score==50:
+    print("Half century")
+elif score==100:
+    print("Century")
+
+
+#Task - Categorize internet speed (Slow, Medium, Fast)
+
+
+speed=int(input("Enter the internet speed in mbps: "))
+if speed<25:
+    print("slow")
+elif speed>=25 and speed<=100:
+    print("medium")
+elif speed>100:
+    print("Fast")
+
+
+#Task - Determine transport type (Bike, Car, Bus, Truck) by wheels
+
+wheel=int(input("Enter the number of wheels: "))
+
+
+#Task - Categorize exam result (Fail, Pass, Merit, Distinction, Topper)
+
+mark1=int(input("Enter the total marks: "))
+if mark1<33:
+    print("Fail")
+elif mark1>=33 and mark1<=59:
+    print("Pass")
+elif mark1>59 and mark1<=74:
+    print("Distinction")
+elif mark1>74 and mark1<=100:
+    print("Topper")
+
+#Task - Classify character (uppercase, lowercase, digit, special)
+
+sen=input("Enter the characters: ")
+if sen.isupper():
+    print("Uppercase")
+elif sen.islower():
+    print("Lowercase")
+elif sen.isdigit():
+    print("Digit")
+elif not sen.isalnum():
+    print("Special")
