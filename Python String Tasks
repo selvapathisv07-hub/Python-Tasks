@@ -1,0 +1,218 @@
+#Task -  Reverse a string. 
+
+s=input("Enter the string: ")
+print(s[::-1])
+
+#Task -  Check whether a string is palindrome
+
+s1=input("Enter the string: ")
+if s1.lower()==s1.lower()[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+
+#Task -  Count number of vowels in a string.
+
+s2=input("Enter the string: ")
+c=0
+l=['a','e','i','o','u']
+for i in s2:
+    if i.lower() in l:
+        c+=1
+print(c)
+
+
+#Task - Count number of consonants in a string
+
+s3=input("Enter the string: ")
+c1=0
+for i in s3:
+    if i.isdigit():
+        c1+=1
+print(c1)
+
+
+#Task -  Count total characters in a string (without using length()).
+
+s4=input("Enter the string: ")
+c2=0
+for i in s4:
+    c2+=1
+print(c2)
+
+
+#Task - Convert string to uppercase without using to UpperCase().
+
+s5=input("Enter the string: ")
+for i in s5:
+    if i.islower():
+        print(i.swapcase(),end="")
+    if i.isupper():
+        print(i,end="")
+
+
+#Task - Convert string to lowercase without using toLowerCase().
+
+s6=input("Enter the string: ")
+for i in s6:
+    if i.isupper():
+        print(i.swapcase(),end="")
+    if i.islower():
+        print(i,end="")
+
+
+#Task - Remove spaces from a string.
+
+s7=input("Enter the string: ")
+print(s7.replace(" ",""))
+
+
+#Task - Count number of words in a string.
+
+s8=input("Enter the string: ")
+print(len(s8.split()))
+
+
+#Task - Find first occurrence of a character.
+
+s9=input("Enter the string: ")
+s10=input("Enter the character: ")
+print(s9.index(s10))
+
+
+#Task - Find last occurrence of a character
+
+s11=input("Enter the string: ")
+s12=input("Enter the character: ")
+print(s11.rfind(s12))
+
+#Task - Replace all spaces with hyphen (-).
+
+s13=input("Enter the string: ")
+print(s13.replace(" ","-"))
+
+
+#Task - Check whether string contains only digits.
+
+s14=input("Enter the string: ")
+if s14.isdigit():
+    print("valid")
+else:
+    print("Invalid")
+
+
+#Task - Compare two strings without using equals().
+
+s15=input("Enter the string: ")
+s16=input("Enter the string: ")
+is_same=False
+for i,j in zip(s15,s16):
+    if i!=j:
+        is_same=False
+        break
+    else:
+        is_same=True
+print(is_same)
+
+
+#Task - Concatenate two strings without using + operator
+
+s17=input("Enter the string: ")
+s18=input("Enter the string: ")
+print(f"{s17}{s18}")
+
+
+#Task - Remove duplicate characters from string.
+
+s19=input("Enter the string: ")
+s20=""
+for i in s19:
+    if i not in s20:
+        s20+=i
+print(s20)
+
+
+#Task - Find frequency of each character
+
+s21=input("Enter the string: ")
+s22=""
+for i in s21:
+    if i not in s22:
+        s22+=i
+print(s22)
+for i in s22:
+    print(i,'=',s21.count(i))
+
+
+#Task - Find largest word in a sentence.
+
+s23=input("Enter the sentence: ")
+s24=s23.split()
+n=0
+for i in s24:
+    if len(i)>n:
+        n=len(i)
+print(n)
+
+
+#Task - Count uppercase, lowercase, digits, special characters
+
+s25=input("Enter the string: ")
+u=0
+L=0
+d=0
+s=0
+for i in s25:
+    if i.isupper():
+        u+=1
+    elif i.islower():
+        L+=1
+    elif i.isdigit():
+        d+=1
+    else:
+        s+=1
+print(f"The number of uppercase = {u}")
+print(f"The number of lowercase = {L}")
+print(f"The number of digits = {d}")
+print(f"The number of special characters = {s}")
+
+
+#Task - Reverse each word in a sentence.
+
+s26=input("Enter the sentence: ")
+s27=""
+for i in s26.split():
+    s27=s27+i[::-1]+" "
+print(s27)
+
+
+#Task -  Check whether two strings are anagrams.
+
+s28=input("Enter the string: ")
+s29=input("Enter the string: ")
+a=True
+if len(s28)!=len(s29):
+    a=False
+for i in s28:
+    if i not in s29:
+        a=False
+if a:
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+
+#Task - Remove a specific character from string
+
+s30=input("Enter a string: ")
+s31=input("Enter a character: ")
+print(s30.replace(s31,""))
+
+
+#Task -   Print all substrings of a string
+
+s32=input("Enter a string: ")
+for i in range(len(s32)):
+    for j in range(len(s32)+1):
+        print(s32[i:j])
