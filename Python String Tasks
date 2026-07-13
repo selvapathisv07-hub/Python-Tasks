@@ -216,3 +216,26 @@ s32=input("Enter a string: ")
 for i in range(len(s32)):
     for j in range(len(s32)+1):
         print(s32[i:j])
+
+#Task -  Implement string compression (aaabb → a3b2)
+
+s33=input("Enter a string: ")
+s34=""
+s35=""
+for i in s33:
+    if i not in s34:
+        s34+=i
+for i in s34:
+    s35+=i+str(s33.count(i))
+print(s35)
+
+
+#Task -  Find first non-repeating character
+
+s36=input("Enter the string: ")
+s37=""
+for i in s36:
+    if s36.count(i)==1:
+        s37+=i
+        break
+print(s37)
