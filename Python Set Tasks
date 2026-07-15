@@ -1,0 +1,66 @@
+#Task - Write a Python program to remove item(s) from a given set
+
+s={1,2,3,4,5,6,7,8,9,0}
+u=int(input("Enter the element to be removed: "))
+s.remove(u)
+print(s)
+
+
+#Task - Write a Python program to remove an item from a set if it is present in the set.
+
+s1={1,2,3,4,5,6,7,8,9,0}
+s1.remove(3)
+print(s1)
+
+
+#Task - Write a Python program to create set difference
+
+s2={'a','b',2,'z',5,'c'}
+s3={3,5,'b',7,10,'d'}
+print(s2.difference(s3))
+
+
+#Task - Write a Python program to remove all elements from a given set
+
+s4={1,2,3,4,5,6,7,8,9,0}
+s4.clear()
+print(s4)
+
+
+#Tsk - Write a Python program to find the maximum and minimum values in a set
+
+s5={1,2,3,4,5,6,7,8,9,0}
+print(max(s5))
+print(min(s5))
+
+
+#Task - Find union, intersection, and difference between two sets
+
+s6={'a','b',2,'z',5,'c'}
+s7={3,5,'b',7,10,'d'}
+print(s6.union(s7))
+print(s6.intersection(s7))
+print(s6.difference(s7))
+
+
+#Task - Check if two sets are disjoint
+
+s8={'a','b',2,'z',5,'c'}
+s9={3,5,'b',7,10,'d'}
+print(s8.isdisjoint(s9))
+
+
+#Task - Remove all elements divisible by 2 from a set of numbers.
+
+s10={1,2,3,4,5,6,7,8,9,0}
+for i in s10.copy():
+    if i%2==0:
+        s10.remove(i)
+print(s10)
+
+
+#Task - Find elements present in only one of two sets (symmetric difference).
+
+s11={'a','b',2,'z',5,'c'}
+s12={3,5,'b',7,10,'d'}
+print(s11.symmetric_difference(s12))
