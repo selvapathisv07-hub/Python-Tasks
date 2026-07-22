@@ -1,0 +1,490 @@
+#Task - Create a function to check whether a number is prime.
+
+def prime(x):
+    isprime=True
+    for i in range(2,x):
+        if x%i==0:
+            isprime=False
+    if isprime:
+        print(f"{x} is prime")
+    else:
+        print(f"{x} is not prime")
+prime(11)
+
+
+#Task - Function to find maximum of 3 numbers.
+
+l=[45,64,34]
+def maximum(x):
+    m=0
+    for i in x:
+        if i>m:
+            m=i
+    print(f"Maximum number is {m}")
+maximum(l)
+
+
+#Task - Function to swap two numbers (without temp)
+
+def swap(a,b):
+    a=a+b
+    b=a-b
+    a=a-b
+    print(a)
+    print(b)
+swap(4,5)
+
+
+#Task - Function to count vowels in a string.
+
+def vowel(s):
+    v=['a','e','i','o','u']
+    c=0
+    for i in s:
+        if i.lower() in v:
+            c+=1
+    print(f"The number of vowels in the string is {c}")
+vowel("Selvapathi")
+
+
+#Task - Function to check palindrome string.
+
+def palindrome(s):
+    if s.lower()==s.lower()[::-1]:
+        print("Yes it is a palindrome")
+    else:
+        print("Not a palindrome")
+palindrome("Racecar")
+
+
+#Task - Function to calculate simple interest.
+
+def si(p,t):
+    simple_interest=(p*t*10)/100
+    print(f"The simple interest is {simple_interest}")
+si(10000,5)
+
+
+#Task - Function to find factorial of a number.
+
+def factorial(n):
+    if n==1:
+        return n
+    else:
+        a=n*factorial(n-1)
+        return a
+print(factorial(6))
+
+
+#Task - Function to return sum of even numbers in a list.
+
+def e_sum(l):
+    s=0
+    for i in l:
+        if i%2==0:
+            s+=i
+    print(F"The sum of even numbers in a list is {s}")
+e_sum([1,2,3,4,5,6,7,8,9,0])
+
+
+#Task - Function to convert Celsius to Fahrenheit.
+
+def c_f(n):
+    f=(n*(9/5))+32
+    print(f)
+c_f(42)
+
+
+#Task - Function to check Armstrong number.
+
+def armstrong(n):
+    a=str(n)
+    l=len(a)
+    c=0
+    for i in a:
+        c+=int(i)**l
+    if c==int(a):
+        print("It is a armstrong number")
+    else:
+        print("It is not a armstrong number")
+armstrong(153)
+
+
+#Task - Function to remove duplicate elements from list.
+
+def duplicate(l):
+    d=[]
+    for i in l.copy():
+        if i not in d:
+            d.append(i)
+        else:
+            l.remove(i)
+    print(l)
+duplicate([1,2,3,4,3,6,2,7,5,6,2,4,5])
+
+
+#Task - Function to find second largest number in list.
+
+def sec_lar(l):
+    a=0
+    b=0
+    for i in l:
+        if i>a:
+            a=i
+    for i in l:
+        if a>i>b:
+            b=i
+    print(a,b)
+sec_lar([4,5,7,8,2,4,1,9,8,3,11,5])
+
+
+#Task - Function to check perfect number.
+
+def p_num(n):
+    c=0
+    for i in range(1,n):
+        if n%i==0:
+            c+=i
+    if c==n:
+        print(f"{n} is a perfect number")
+    else:
+        print(f"{n} is not a perfect number")
+p_num(10)
+
+
+#Task - Function to generate n Fibonacci numbers.
+
+def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+fibonacci(10)
+
+
+#Task - Function to calculate power (xⁿ) without using **.
+
+def power(x,n):
+    a=1
+    for i in range(n):
+        a*=x
+    print(a)
+power(3,5)
+
+
+#Task - Function to count words in a sentence.
+
+def words(s):
+    l=s.split()
+    c=len(l)
+    print(F"The number of words in the sentence is {c}")
+words("Python is a high level programming language")
+
+
+#Task - Function to validate email format.
+
+def email(s):
+    l=['!','@','#','$','%','^','&','*','(',')']
+    c=len(s)
+    if '@' not in s:
+        print("Invalid")
+    elif s[0] in l:
+        print("invalid")
+    elif s[c-1] in l:
+        print("Invalid")
+    elif " " in s:
+        print("Invalid")
+    else:
+        print("Valid")
+email("%5jo#hn2007@gmail.com")
+
+
+
+#Task - Function to find LCM of two numbers.
+
+def find_gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+def find_lcm(a, b):
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // find_gcd(a, b)
+num1 = 12
+num2 = 18
+print(f"The LCM of {num1} and {num2} is: {find_lcm(num1, num2)}")
+
+#Task - Function to find GCD of two numbers.
+
+def find_gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+print(find_gcd(28,48))
+
+
+#Task - Function to simulate bank deposit & withdrawal.
+
+Bal=5678909
+def withdraw(w):
+    global Bal
+    if w<Bal:
+        Bal-=w
+        print("Withdrawal Successful")
+        print(f"The remaining bank balance is {Bal}")
+    else:
+        print("Insufficient balance")
+        print("Withdrawal Failed")
+    return Bal
+
+def Deposit(d):
+    global Bal
+    if d>0:
+        Bal+=d
+        print("Deposit Successful")
+        print(f"The remaining bank balance is {Bal}")
+    
+    else:
+        print("Invalid deposit")
+        print("Deposit Failed")
+    return Bal
+withdraw(56776)
+Deposit(2345678)
+Deposit(456788)
+withdraw(34232)
+
+
+#Task - Lambda to find square of a number.
+
+n=lambda a:a**2
+u=int(input("Enter a number: "))
+print(n(u))
+
+
+#Task - Lambda to check even or odd.
+
+n1=lambda a: a%2
+u1=int(input("Enter a number: "))
+if n1(u1)==0:
+    print("Even")
+else:
+    print("Odd")
+
+
+#Task - Lambda to find maximum of two numbers.
+
+n2=lambda a,b: max(a,b)
+
+c=n2(int(input("Enter the numbers: ")),int(input("Enter the numbers: ")))
+print(c)
+
+
+#Task - Lambda to calculate cube.
+
+n3=lambda a: a**3
+u2=int(input("Enter the number: "))
+print(n3(u2))
+
+
+#Task - Lambda to check positive or negative.
+
+n4=lambda a: "Positive" if a>0 else "Negative"
+print(n4(int(input("Enter the number: "))))
+
+
+#Task - Lambda to add two numbers.
+
+n5=lambda a,b: a+b
+print(n5(int(input("Enter the numbers: ")),int(input("Enter the numbers: "))))
+
+
+#Task - Lambda to sort list of tuples by second value.
+
+data = [("apple", 5), ("banana", 2), ("cherry", 8), ("date", 1)]
+sorted_data = sorted(data, key=lambda x: x[1])
+print(sorted_data)
+
+
+#Task - Lambda with filter() to get even numbers.
+
+l=[1,2,3,4,5,6,7,8,9,0]
+even=list(filter(lambda i: i%2==0,l))
+print(even)
+
+
+#Task - Lambda with filter() to get vowels from string.
+
+vowel=['a','e','i','o','u']
+string="Hello World"
+vo=list(filter(lambda x: x.lower() in vowel, string))
+print(vo)
+
+
+#Task - Lambda with map() to square list elements.
+
+l1=[1,2,3,4,5,6,7,8,9,0]
+n6=list(map(lambda x: x**2, l1))
+print(n6)
+
+
+#Task - Lambda with map() to convert lowercase to uppercase.
+
+string1="Hello World"
+s1="".join(map(lambda x: x.upper(), string1))
+print(s1)
+
+
+#Task - Lambda with reduce() to find sum of list.
+from functools import reduce
+
+l2=[1,2,3,4,5,6,7,8,9,0]
+n7=reduce(lambda x,y: x+y,l2)
+print(n7)
+
+
+#Task - Lambda with reduce() to find product of list.
+
+from functools import reduce
+
+l3=[1,2,3,4,5,6,7,8,9]
+n8=reduce(lambda x,y: x*y,l3)
+print(n8)
+x
+
+#Task - Lambda to check string length > 5.
+
+string2="Hello World"
+s2=lambda x: len(string2)>5
+if s2(string2):
+    print("length greather than 5")
+else:
+    print("Length lesser than 5")
+
+
+#Task - Lambda to find minimum in list.
+
+l4=[1,2,3,4,5,6,7,8,9]
+n8=lambda x: min(x)
+print(n8(l4))
+
+
+#Task - Lambda to sort dictionary by values.
+
+dic={'a':9,'b':4,'c':3,'f':7,'h':2}
+dic1=dict(sorted(dic.items(), key=lambda x: x[1]))
+print(dic1)
+            
+
+#Task - Lambda to calculate simple interest.
+
+n9=lambda a,b,c: a*(b/100)*c
+p=int(input("Enter the principal: "))
+r=int(input("Enter the rate of interest: "))
+t=int(input("Enter the time: "))
+print(n9(p,r,t))
+
+
+#Task - Lambda to reverse a string.
+
+string3="Hello World"
+s3=(lambda x: x[::-1])
+print(s3(string3))
+
+
+#Task - Lambda to check palindrome string.
+
+string4="Hello World"
+s4=lambda x: x[::-1]==x
+if s4(string4):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+
+#Task - Lambda to find greatest of 3 numbers.
+
+l5=[34,54,21]
+n10=lambda x: max(x)
+print(n10(l5))
+
+
+#Task - Recursive function to find sum of n numbers.
+
+def nsum(x):
+    if x==0:
+        return 0
+    else:
+        return x+nsum(x-1)
+print(nsum(10))
+
+
+#Task - Recursive function to find factorial.
+
+def factorial(n):
+    if n==1:
+        return 1
+    else:
+        return n*factorial(n-1)
+print(factorial(10))
+
+
+#Task - Recursive function to print numbers from 1 to n.
+
+def pr(x,c=1):
+    if c>x:
+        return
+    print(c)
+    pr(x,c+1)
+pr(10)
+
+
+#Task - Recursive function to print numbers from n to 1.
+
+def pr(x):
+    if x==1:
+        return 1
+    else:
+        print(x)
+        return pr(x-1)
+print(pr(10))
+
+#Task - Recursive function to find power (xⁿ).
+
+def power(x,n):
+    if  n==0:
+        return 1
+    return (x*power(x,n-1))
+        
+print(power(2,6))
+
+
+#Task - Recursive function to find GCD.
+
+def gcd(a,b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+print(gcd(24,48))
+
+
+#Task - Recursive function to find LCM.
+
+def gcd(a,b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+def lcm(a, b):
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // gcd(a, b)
+print(lcm(45,24))
+
+
+#Task - Recursive function to calculate sum of digits.
+
+def d_sum(n):
+    if n == 0:
+        return 0
+    return (n % 10) + d_sum(n // 10)
+print(d_sum(45678))
