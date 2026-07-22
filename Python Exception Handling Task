@@ -1,0 +1,17 @@
+try:
+    a=int(input("Enter the marks: "))
+    if a<0 or a>100:
+        raise Exception("Marks should be between 0 and 100.")
+except ValueError:
+    print("Please enter a valid number.")
+except Exception as e:
+    print("Error: ",e)
+else:
+    if a>=40:
+        print("Mark: ",a)
+        print("Pass")
+    else:
+        print("Mark: ",a)
+        print("Fail")
+finally:
+    print("Process done")
