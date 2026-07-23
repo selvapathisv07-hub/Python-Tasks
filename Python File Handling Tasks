@@ -1,0 +1,55 @@
+file=open("Sample.txt","w")
+file.write("Name: Selvapathi\nAge:18\nDepartment: Python\na\nb\nc\nd\ne\nf")
+file=open("Sample.txt","r")
+print(file.read())
+file=open("Sample.txt","r")
+c=0
+c1=0
+c2=0
+for i in file.readlines():
+    c+=1
+print(c)
+file=open("Sample.txt","r")
+text = file.read()
+word_count = len(text.split())
+print(word_count)
+file=open("Sample.txt","r")
+for i in file.read():
+    c1+=1
+print(c1)
+file=open("Sample.txt","r")
+for i in file.readline():
+    c2+=1
+print(c2)
+with open("Sample.txt", "r") as file:
+    for _ in range(5):
+        line = file.readline()
+        print(line)
+file.close()
+
+
+
+try:
+    with open("Sample4.txt", "x") as file:
+        file.write("Created Safely\n")
+except FileExistsError:
+    print("File already exists")
+
+def student(student_list):
+    with open("Sample4.txt", "a") as file:
+        for rollno, name, mark in student_list:
+            file.write(f"{rollno},{name},{mark}\n")
+    print("Student records added successfully!")
+
+def view():
+    try:
+        with open("Sample4.txt", "r") as file:
+            print("\n--- File Contents ---")
+            print(file.read())
+    except FileNotFoundError:
+        print("File not found")
+
+students = [(1, "Surya", 98),(2, "Jay", 89),(3, "Arjun", 91),(4, "Arun", 67)]
+
+student(students)
+view()
