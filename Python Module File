@@ -1,0 +1,73 @@
+def add(*n):
+    c=0
+    for i in n:
+        c+=i
+    return f"The sum of the numbers is {c}"
+
+def sub(a,b):
+    return a-b
+
+def multiply(*n):
+    c=1
+    for i in n:
+        c*=i
+    return f"The product of the numbers is {c}"
+
+def divide(a,b):
+    return a/b
+
+def C_F(c):
+    F=(c*(9/5))+32
+    return F
+
+def F_C(f):
+    C=(f-32)*(5/9)
+    return C
+
+def circle(r):
+    a=(22/7)*(r**2)
+    return f"The area of the circle with radius {r} = {a}cm²"
+
+def rectangle(l,w):
+    a=l*w
+    return f"The area of the rectangle  with length {l} and width {w} is {a}cm²"
+
+def triangle(b,h):
+    a=(1/2)*b*h
+    return f"The area fo the triangle with base {b} and height {h} is {a}cm²"
+
+class BankAccount:
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+
+    def deposit(self,amount):
+        self.balance+=amount
+        print("Amount Deposited")
+        print(f"Current Bank Balance is {self.balance}")
+
+    def withdraw(self,amount):
+        if amount<=self.balance:
+            self.balance-=amount
+            print("Amount has been Withdrawn Successfully")
+            print(f"Current Bank Balance is {self.balance}")
+        else:
+            print("Insufficient Balance")
+    
+class AcademicResult:
+    def __init__(self,name,s,s1,s2):
+        self.name=name
+        self.s=s
+        self.s1=s1
+        self.s2=s2
+
+    def total(self):
+        c=self.s+self.s1+self.s2
+        return f"The total mark of the student {self.name} is {c}"
+
+    def average(self):
+        t=(self.s+self.s1+self.s2)/3
+        return f"The average of the student {self.name} is {t}"
+
+
+        
