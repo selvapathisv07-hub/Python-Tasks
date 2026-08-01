@@ -1,0 +1,198 @@
+#Task - A school wants to maintain student information in a separate Python module. The module should contain functions to display the student's name, register number, and department. The main program should import the module and display the student's details.
+
+def sname(n):
+    print(f"The name of the student is {n}")
+
+def rnum(n):
+    print(f"The registered number of the student is {n}")
+
+def dep(n):
+    print(f"The department of the student is {n}")
+
+#Task - A bank wants to create a reusable module that contains functions for deposit, withdrawal, and balance enquiry. The main program should import the bank module and perform these banking operations instead of writing the functions repeatedly.
+
+def deposit(amount,balance):
+    balance+=amount
+    print("Amount deposited successfully")
+    print(f"The current bank balance is {balance}")
+
+def withdraw(amount,balance):
+    if amount<=balance:
+        balance-=amount
+        print("Amount has been withdrawn successfully")
+        print(f"The current bank balance is {balance}")
+    else:
+        print("Insuffcient Balance")
+
+def balance_e(balance):
+    print(balance)
+
+#Task - A calculator application requires addition, subtraction, multiplication, and division operations. Create these functions in a user-defined module and import the module into the main program to perform the calculations.
+
+def add(*n):
+    c=0
+    for i in n:
+        c+=i
+        print(f"The sum of the numbers is {c}")
+
+def sub(a,b):
+    c=a-b
+    print(f"The difference of the numbers is {c}")
+
+def mul(*n):
+    c=1
+    for i in n:
+        c*=i
+        print(f"The product of the numbers is {c}")
+
+def div(a,b):
+    try:
+        if b!=0:
+            c=a/b
+            print(f"The divided value is {c}")
+        else:
+            raise ZeroDivisionError("The number cannot be divided by zero")
+    except ZeroDivisionError as e:
+        print("Error :",e)
+
+#Task - A library management system wants to store functions for issuing books, returning books, and checking book availability in a separate module. The main program should import the module and execute the required library operation.
+
+library_inventory = {"1984": 3,"To Kill a Mockingbird": 0,"The Great Gatsby": 2,"Dune": 5}
+
+
+def check_availability(book_title):
+    copies = library_inventory.get(book_title,0)
+    if copies>0:
+        print(f"The book '{book_title}' is available")
+    else:
+        print(f"Sorry, the book '{book_title}' is not available")
+
+def issue_book(book_title):
+    if library_inventory.get(book_title, 0)>0:
+        library_inventory[book_title]-= 1
+        print(f"Successfully issued '{book_title}'. Enjoy reading!")
+    else:
+        print(f"Cannot issue '{book_title}'. It is either out of stock or not in the system.")
+
+def return_book(book_title):
+    if book_title in library_inventory:
+        library_inventory[book_title] += 1
+    else:
+        library_inventory[book_title] = 1
+
+#Task - A hospital management system wants to create a module that contains functions to display patient details, doctor details, and appointment status. Import the module in the main program and display the required information.
+
+def patient(id,name,age,ailment):
+    t="Patient Details"
+    print(t.center(25,"-"))
+    print(f"Patient ID: {id}")
+    print(f"Name: {name}")
+    print(f"Age: {age}")
+    print(f"Ailment: {ailment}")
+
+def doctor(id,name,spec,dep):
+    t="Doctor Details"
+    print(t.center(25,"-"))
+    print(f"Doctor ID: {id}")
+    print(f"Name: {name}")
+    print(f"Specialization: {spec}")
+    print(f"Department: {dep}")
+
+def appointment(id,stat,time):
+    t="Appointment Details"
+    print(t.center(45,"-"))
+    print(f"Appointment ID: {id}")
+    print(f"Status: {stat}")
+    print(f"Time: {time}")
+
+#Task - A college wants to maintain faculty information using a user-defined module. The module should contain functions to display the faculty name, department, designation, and experience. The main program should import the module and print the details.
+
+def fname(n):
+    print(f"The name of the faculty is {n}")
+
+def fdep(d):
+    print(f"The department of the faculty is {d}")
+
+def fdesig(d):
+    print(f"The designation of the faculty is {d}")
+
+def fexp(e):
+    print(f"The experience of the faculty is {e} years")
+
+#Task - A supermarket billing system wants to create a module that calculates the total bill, discount amount, and final payable amount. The main program should import the billing module and generate the customer's bill.
+
+def btotal(*n):
+    c=0
+    for i in n:
+        c+=i
+    print("The bill total is {c}")
+
+def discount(discount_p,total):
+    total=total*(discount_p/100)
+    print("The discount amount is {total}")
+
+def final(disc,tot):
+    f=tot-dics
+    print(f"The final bill amount is {f}")
+
+#Task - A mobile recharge application wants to keep functions for Jio, Airtel, and BSNL recharge plans in a separate module. The main program should import the module and display the selected recharge plan.
+
+mobile_recharge={"Jio":[{"price": "₹239", "validity": "28 Days", "data": "1.5 GB/day"},{"price": "₹666", "validity": "84 Days", "data": "1.5 GB/day"},{"price": "₹2999", "validity": "365 Days", "data": "2.5 GB/day"},],"Airtel": [{"price": "₹265", "validity": "28 Days", "data": "1 GB/day"},{"price": "₹719", "validity": "84 Days", "data": "1.5 GB/day"},{"price": "₹2999", "validity": "365 Days", "data": "2 GB/day"},],"BSNL": [{"price": "₹107", "validity": "35 Days", "data": "3 GB total"},{"price": "₹397", "validity": "150 Days", "data": "2 GB/day for 30 days"},{"price": "₹1999", "validity": "365 Days", "data": "600 GB total"},]}
+    
+def p_name(n):
+    if n in mobile_recharge:
+        print("Yes it is available")
+    else:
+        print("Not available")
+
+def show_p(n):
+    a=(len(mobile_recharge[n]))
+    for i in range(a):
+        print(mobile_recharge[n][i])
+
+def spec_p(n,i):
+    print(mobile_recharge[n][i])
+
+#Task - A railway reservation system wants to create a user-defined module that contains functions to check seat availability, display train details, and calculate ticket fare. The main program should import the module and perform the required reservation task.
+
+trains={"12625": {"name": "Kerala Express","route": "New Delhi -> Trivandrum","seats": {"Sleeper": 12, "3AC": 5, "2AC": 0},"fares": {"Sleeper": 750, "3AC": 1950, "2AC": 2800}},"12002": {"name": "Shatabdi Express","route": "New Delhi -> Bhopal","seats": {"Chair Car": 20, "Executive": 3},"fares": {"Chair Car": 1100, "Executive": 2100}}}
+
+def train_id(i):
+    t="TRAIN DETAILS"
+    print(t.center(25,"-"))
+    print("Train Number: ",i)
+    print("Name: ", trains[i]["name"])
+    print("Route: ", train[i]["route"])
+
+def seat_avail(i,s):
+    t="Seat Availability"
+    print(t.center(40,"-"))
+    print(f"Available seats for {s} : {trains[i]["seats"][s]}")
+
+def reservation(i,s,n):
+    t="Reservationn Details"
+    print(t.center(55,"-"))
+    trains[i]["seats"][s]-=n
+    print(f"Booking confirmed for {n} passengers in {s}")
+    print(f"The total fare is {trains[i]["fares"][s]*n}")
+
+#Task - An employee management system wants to create a separate module containing functions to display employee details, calculate salary, and print the employee's designation. The main program should import the module and execute these functions.
+
+employees={"EMP101": {"name": "Alice Smith","department": "Engineering","designation": "Software Engineer","basic_pay": 60000,"allowances": 15000,"deductions": 5000,},"EMP102": {"name": "Bob Johnson","department": "Marketing","designation": "Marketing Manager","basic_pay": 75000,"allowances": 20000,"deductions": 7000,},"EMP103": {"name": "Carol Williams","department": "Human Resources","designation": "HR Executive","basic_pay": 45000,"allowances": 10000,"deductions": 3000,},}
+
+def emp_details(i):
+    print("="*50)
+    t="EMPLOYEE DETAILS"
+    print(t.center(50," "))
+    print("="*50)
+    print("Employee ID: ",i)
+    print("Name: ",employees[i]["name"])
+    print("Department: ",employees[i]["department"])
+    print("Designation: ",employees[i]["designation"])
+    print("Salary: ", employees[i]["basic_pay"]+employees[i]["allowances"]-employees[i]["deductions"])
+    print("="*50)
+
+def calc_sal(i):
+    sal=employees[i]["basic_pay"]+employees[i]["allowances"]-employees[i]["deductions"]
+    print("The Salary of the employees is {sal}")
+    
