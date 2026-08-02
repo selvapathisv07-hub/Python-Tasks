@@ -1,0 +1,39 @@
+from datetime import*
+
+#Task - A passport office wants to compare today's date with the passport expiry date and determine whether the passport is valid or expired.
+
+a="2027-07-07"
+b=str(datetime.now().date())
+if a==b:
+    print("Expired")
+else:
+    print("Not expired")
+
+#Task - A school stores the first period starting time.
+
+start=time(8,30)
+end=time(9,15)
+print(f"The first period starts at {start.strftime("%I:%M %p")}")
+print(f"The first period ends at {end.strftime("%I:%M %p")}")
+a_start=datetime.now()
+print(f"Current Status : The period started at {a_start.strftime("%I:%M %p")}")
+
+#Task - An ATM records the date and time of every transaction.
+
+amount=int(input("Enter the amount: "))
+store=None
+if amount:
+    store=datetime.now().strftime("%I:%M:%S %p")
+else:
+    pass
+
+#Task - A company wants to store and display an employee's joining date.
+
+name=input("Enter your name to register: ")
+e_store=None
+t_store=None
+if name:
+    e_store=name
+    t_store=datetime.now().date()
+print(e_store)
+print(t_store)
