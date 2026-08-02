@@ -1,0 +1,22 @@
+import os
+
+#Task - A software developer wants to know the current working directory before saving project files. Write a Python program using the os module to display the current working directory of the system.
+
+print(os.getcwd())
+
+#Task - A system administrator wants to view all files and folders available in a project directory before performing file operations. Write a Python program to display the contents of the current directory using the os module.
+
+print(os.listdir(os.getcwd()))
+
+#Task - A company wants to rename the file report.txt to annual_report.txt after preparing the final report. Write a Python program using the os module to rename the file.
+
+os.rename("C:\\Users\\sltpv\\AppData\\Local\\Programs\\Python\\Python314\\Example.py","Example2.py")
+
+#Task - A college wants to create a new folder named Python_Lab to store all Python practical programs. Write a Python program using the os module to create the directory.
+
+os.makedirs("Python")
+
+#Task - A software company wants to organize project files by creating nested folders such as Project/Source/Python. Write a Python program using the os module to create multiple directories at once
+
+os.makedirs("Project/Language/Python")
+
