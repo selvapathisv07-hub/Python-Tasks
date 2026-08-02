@@ -1,0 +1,29 @@
+import calendar
+
+#Task - ABC Engineering College is preparing the academic calendar for 2027. The principal wants to print the complete calendar of the year.nd print whether it is a leap year.
+
+print(calendar.calendar(2027))
+if calendar.isleap(2027):
+    print("2027 is a leap year")
+else:
+    print("2027 is not a leap year")
+
+#Task - A company is organizing an annual meeting in September 2026. The manager wants to display only the calendar for that month to finalize the meeting date.
+
+print(calendar.month(2026,9))
+
+#Task - A hospital needs to verify whether a baby born in 2028 can have a birthday on February 29.
+
+if calendar.isleap(2028):
+    print("Yes the baby can have birthday on February 29")
+else:
+    print("No the baby cannot have birthday on February 29")
+
+#Task - A company gives a special bonus in every leap year. HR wants to know how many leap years occur between 2000 and 2030.
+
+a=calendar.leapdays(2000,2030)
+print("The numbers of leap years between 2000 and 2030 is",a)
+
+#Task - A travel agency is planning a tour in December 2026. The staff wants to print the calendar of that month to prepare the travel schedule.
+
+print(calendar.month(2026,12))
