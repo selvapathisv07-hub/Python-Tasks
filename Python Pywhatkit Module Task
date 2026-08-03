@@ -1,0 +1,33 @@
+import pywhatkit as p
+
+#Task - A company wants to automatically send a meeting reminder to all employees through WhatsApp at a scheduled time. Write a Python program using the pywhatkit module to send a WhatsApp message to a given mobile number.
+
+l=input("Enter the numbers: ").split()
+for i in l:
+    p.sendwhatmsg(i,"Meeting Remainder",12,2)
+
+#Task - A school wants to send an exam notification to students through WhatsApp before the examination starts. Write a Python program using the pywhatkit module to send the message automatically at the specified time.
+
+l1=input("Enter the numbers: ").split()
+for i in l:
+    p.sendwhatmsg(i,"Exam Remainder",12,2)
+
+#Task - A music application wants to play a song requested by the user directly on YouTube. Write a Python program using the pywhatkit module to search and play the given song on YouTube.
+
+user=input("Enter the name of the song: ")
+p.playonyt(user)
+
+#Task - A user wants to watch the latest news on YouTube by entering the news topic. Write a Python program using the pywhatkit module to search and play the related video automatically.
+
+user1=input("Enter the news topic: ")
+p.playonyt(user1)
+
+#Task - A college student wants to search for information about Artificial Intelligence on Google. Write a Python program using the pywhatkit module to perform the Google search automatically.
+
+user2=input("Enter the topic: ")
+p.search(user2)
+
+#Task - A customer wants to search for the latest mobile phones on Google without typing the query in a browser. Write a Python program using the pywhatkit module to search the given topic automatically.
+
+p.search("Latest mobile phones")
+
