@@ -1,0 +1,154 @@
+#Task - A school admissions team needs to store and print each student's ID, name, department, and marks using separate records that behave like objects.
+
+class Student:
+    def __init__(self,i,name,dep,mark):
+        self.i=i
+        self.name=name
+        self.dep=dep
+        self.mark=mark
+
+    def show(self):
+        print("-"*50)
+        print("STUDENT DETAILS".center(50," "))
+        print("-"*50)
+        print(f"Student ID: {self.i}")
+        print(f"Name: {self.name}")
+        print(f"Department: {self.dep}")
+        print(f"Mark: {self.mark}")
+        print("-"*50)
+
+a=Student(1,"Selva","Cyber",9.9)
+b=Student(2,"Surya","EEE",9.8)
+a.show()
+b.show()
+
+#Task - A billing counter must calculate the area of different rectangular floor mats from their length and breadth entered at runtime.
+
+class rectangle:
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
+
+    def area(self):
+        print(f"The area of the rectangular floor mats is {self.l*self.b}")
+
+a1=rectangle(10,20)
+a1.area()
+
+#Task - A workshop tool needs to compute the area and circumference of circular plates from user-provided radii.
+
+class circle:
+    def __init__(self,r):
+        self.r=r
+
+    def carea(self):
+        print(f"The area of the circular plates is {(22/7)*(self.r)**2}")
+
+    def circum(self):
+        print(f"The circumferance of the circular plates is {2*(22/7)*self.r}")
+
+radius=float(input("Enter the radius: "))
+a2=circle(radius)
+a2.carea()
+a2.circum()
+
+#Task -  An HR portal stores employee ID, name, designation, and salary, then prints a formatted employee directory.
+
+class Employee:
+    def __init__(self,i,name,des,sal):
+        self.i=i
+        self.name=name
+        self.des=des
+        self.sal=sal
+
+    def empdic(self):
+        di={"ID":self.i,"Name":self.name,"Designation":self.des,"Salary":self.sal}
+        print(di)
+
+a3=Employee(101,"Selva","Cyber",70000)
+a3.empdic()
+
+#Task - A car showroom keeps an inventory of cars with brand, model, year, and price and displays all cars currently available.
+
+class Cars:
+    l=[]
+    def __init__(self,brand,model,year,price):
+        self.brand=brand
+        self.model=model
+        self.year=year
+        self.price=price
+        Cars.l.append(self)
+def show_cars():
+    for i in Cars.l:
+        print(f"Brand: {i.brand} | Model: {i.model} | Year: {i.year} | Price: {i.price}")
+
+
+a4=Cars("BMW","M4",2020,"1.5cr")
+b4=Cars("Ferrari","Revolto",2016,"1cr")
+        
+show_cars()
+
+#Task -  A mobile store records brand, storage, RAM, and price for each device and prints a catalog.
+
+class Mobiles:
+    m=[]
+    def __init__(self,brand,storage,RAM,price):
+        self.brand=brand
+        self.storage=storage
+        self.RAM=RAM
+        self.price=price
+        Mobiles.m.append(self)
+
+def catalog():
+    for i in Mobiles.m:
+        print(f"Brand: {i.brand} | Storage: {i.storage} | RAM: {i.RAM} | Price: {i.price}")
+
+a5=Mobiles("IQOO","256GB",16,20000)
+b5=Mobiles("Vivo Y27s","250GB",16,15000)
+
+catalog()
+
+#Task - A banking app maintains account number, customer name, and balance while supporting deposit and withdrawal actions.
+
+class Account:
+    def __init__(self,acc_num,name,balance):
+        self.acc_num=acc_num
+        self.name=name
+        self.balance=balance
+
+    def deposit(self,amount):
+        self.balance+=amount
+        print("Amount successfully deposited")
+        print(f"Current Balance: {self.balance}")
+
+    def withdraw(self,amount):
+        if amount<=self.balance:
+            self.balance-=amount
+            print("Amount has been withdrawn successfully")
+            print(f"Current Balance: {self.balance}")
+
+a6=Account("45677658","Selva",570000)
+b6=Account("45678779","Yash",899098)
+
+a6.deposit(56789)
+b6.withdraw(45678)
+
+#Task - A library catalog stores book ID, title, author, and category and displays all books added during the session.
+
+class library:
+    b=[]
+    def __init__(self,i,title,author,category):
+        self.i=i
+        self.title=title
+        self.author=author
+        self.category=category
+        library.b.append(self)
+
+def show_books():
+    for a in library.b:
+        print(f"Book ID: {a.i} | Title: {a.title} | Author: {a.author} | Category: {a.category}")
+
+a7=library(101,"Dune","Frank Herbert","Science Fiction")
+b7=library(102,"In Cold Blood","Truman Capote","Thriller")
+
+show_books()
