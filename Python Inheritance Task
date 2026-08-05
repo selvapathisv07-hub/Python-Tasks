@@ -1,0 +1,381 @@
+#Task - A zoo system has common animal behavior such as eat and sleep, while dogs, cats, and birds add species-specific actions.
+
+class Animal:
+    
+    def __init__(self,name):
+        self.name=name
+
+    def eat(self):
+        print(f"{self.name} is eating")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping")
+
+class Dog(Animal):
+    
+    def bark(self):
+        print(f"{self.name} says: Woof! Woof!")
+
+class Cat(Animal):
+    
+    def meow(self):
+        print(f"{self.name} says: Meow!")
+
+class Bird(Animal):
+    
+    def fly(self):
+        print(f"{self.name} says: Spreads its wing and flies")
+
+dog=Dog("Arcanine")
+cat=Cat("Litten")
+bird=Bird("Pidgey")
+
+dog.eat()
+cat.sleep()
+bird.eat()
+dog.bark()
+cat.meow()
+bird.fly()
+
+#Task - A vehicle management app shares registration number and fuel type across all vehicles, while cars add seating capacity and trucks add load capacity.
+
+class Vehicle:
+    
+    def __init__(self,reg,fuel):
+        self.reg=reg
+        self.fuel=fuel
+
+class Cars(Vehicle):
+
+    def __init__(self,reg,fuel,c):
+        super().__init__(reg,fuel)
+        self.c=c
+        
+    def car_details(self):
+        print(f"Registration Number: {self.reg} | Fuel Type: {self.fuel} | Seat Capacity: {self.c} seats")
+
+class Trucks(Vehicle):
+
+    def __init__(self,reg,fuel,l):
+        super().__init__(reg,fuel)
+        self.l=l
+
+    def truck_details(self):
+        print(f"Registration Number: {self.reg} | Fuel Type: {self.fuel} | Load Capacity: {self.l} Litres")
+
+car=Cars("ABC-1234","Petrol",7)
+truck=Trucks("XYZ-6789","Diesel",150)
+
+car.car_details()
+truck.truck_details()
+
+#Task -  A college database stores common person details and extends them for students with roll numbers and marks.
+
+class Person:
+
+    def __init__(self,name,age,dep):
+        self.name=name
+        self.age=age
+        self.dep=dep
+
+class Student(Person):
+
+    def __init__(self,name,age,dep,roll_num,mark):
+        super().__init__(name,age,dep)
+        self.roll_num=roll_num
+        self.mark=mark
+
+    def show_student_details(self):
+        print(f"Roll Number: {self.roll_num} | Name: {self.name} | Age: {self.age} | Department: {self.dep} | Mark: {self.mark}")
+
+s1=Student("Selva",18,"Cybersecurity",10988482,98)
+
+s1.show_student_details()
+
+#Task -  A company payroll module stores employee details and extends managers with a bonus component and supervisors with an allowance component.
+
+class Employee:
+
+    def __init__(self,name,sal):
+        self.name=name
+        self.sal=sal
+
+    def show_employee_details(self):
+        print(f"Name: {self.name} | Base Salary: ${self.sal}")
+
+class Manager(Employee):
+
+    def __init__(self,name,sal,bonus):
+        super().__init__(name,sal)
+        self.bonus=bonus
+
+    def show_manager_details(self):
+        print(f"Name: {self.name} | Base Salary: ${self.sal} | Bonus: ${self.bonus}")
+
+class Supervisor(Employee):
+
+    def __init__(self,name,sal,allowance):
+        super().__init__(name,sal)
+        self.allowance=allowance
+
+    def show_supervisor_details(self):
+        print(f"Name: {self.name} | Base Salary: ${self.sal} | Allowance: ${self.allowance}")
+
+emp=Employee("Rahul",45000)
+man=Manager("Ronaldo",90000,10000)
+sup=Supervisor("Virat",75000,5000)
+
+emp.show_employee_details()
+man.show_manager_details()
+sup.show_supervisor_details()
+
+#Task -  A drawing tool defines common shape properties and lets circles and rectangles calculate their own areas.
+
+class Shape:
+
+    def __init__(self,name,color):
+        self.name=name
+        self.color=color
+
+    def area():
+        pass
+
+class Circle(Shape):
+
+    def __init__(self, name, color,radius):
+        super().__init__(name, color)
+        self.radius=radius
+
+    def area(self):
+        print(f"The area of the circle of radius {self.radius} is {(22/7)*(self.radius)**2}")
+
+class Rectangle(Shape):
+
+    def __init__(self, name, color,length,width):
+        super().__init__(name, color)
+        self.length=length
+        self.width=width
+
+    def area(self):
+        print(f"The area of the rectangle of length {self.length} and width {self.width} is {self.length*self.width}")
+
+circle=Circle("Circle","Red",7)
+rectangle=Rectangle("Rectangle","Purple",7,6)
+
+circle.area()
+rectangle.area()
+
+#Task - A banking system defines generic account operations while savings accounts add interest calculation and current accounts add overdraft handling.
+
+class Account:
+
+    def __init__(self,Acc_num,name,balance):
+        self.Acc_num=Acc_num
+        self.name=name
+        self.balance=balance
+
+    def deposit(self,amount):
+        self.balance+=amount
+        print("-"*50)
+        print("ACCOUNT".center(50," "))
+        print("-"*50)
+        print(f"Account Number: {self.Acc_num}")
+        print(f"Name: {self.name}")
+        print("The money has been deposited successfully")
+        print(f"Current Balance: ${self.balance}")
+        print("-"*50)
+        print("\n")
+
+    def withdraw(self,amount):
+        if amount<=0:
+            return False
+        
+        if amount<=self.balance:
+            self.balance-=amount
+            print("-"*50)
+            print("ACCOUNT".center(50," "))
+            print("-"*50)
+            print(f"Account Number: {self.Acc_num}")
+            print(f"Name: {self.name}")
+            print("The money has been withdrawn successfully")
+            print(f"Current Balance: ${self.balance}")
+            print("-"*50)
+            print("\n")
+
+    def monthly():
+        pass
+
+class Savings_Account(Account):
+
+    def __init__(self, Acc_num, name, balance,interest):
+        super().__init__(Acc_num, name, balance)
+        self.interest=interest
+
+    def monthly(self):
+        self.balance=self.balance+self.balance*(self.interest/100)
+        print("-"*50)
+        print("ACCOUNT".center(50," "))
+        print("-"*50)
+        print(f"Account Number: {self.Acc_num}")
+        print(f"Name: {self.name}")
+        print(f"Current Balance: ${self.balance}")
+        print("-"*50)
+        print("\n")
+
+class Current_Account(Account):
+
+    def __init__(self, Acc_num, name, balance,overdraft_limit):
+        super().__init__(Acc_num, name, balance)
+        self.overdraft_limit=overdraft_limit
+
+    def withdraw(self, amount):
+        if amount<=0:
+            return False
+
+        if (self.balance-amount)>=-self.overdraft_limit:
+            self.balance-=amount
+            status="Overdraft Used" if self.balance<0 else "Approved"
+            print("-"*50)
+            print("ACCOUNT".center(50," "))
+            print("-"*50)
+            print(f"Account Number: {self.Acc_num}")
+            print(f"Name: {self.name}")
+            print(f"Withdrawl amount : ${amount} - {status}")
+            print(f"Current Balance: ${self.balance}")
+            print("-"*50)
+            print("\n")
+        else:
+            
+            print(f"Attempting ${amount} Withdrawal: Transaction Denied (Exceeds Overdraft Limit of ${self.overdraft_limit})")
+
+c1=Savings_Account(234092384,"Selva",780000,5)
+c2=Current_Account(453554533,"Ronaldo",24882947,1000)
+
+c1.monthly()
+c1.deposit(43434)
+c1.withdraw(32322)
+c2.withdraw(456534)
+c2.withdraw(2442600)
+c2.withdraw(21983800)
+c2.withdraw(1000)
+c2.withdraw(300)
+
+#Task - A school information system models a person and extends it into teacher and student roles with different behaviors.
+
+class Person:
+
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def introduce(self):
+        print(f"Hi, my name is {self.name} and I am {self.age} years old")
+
+    def role(self):
+        pass
+
+class Teacher(Person):
+
+    def __init__(self, name, age,subject,emp_id):
+        super().__init__(name, age)
+        self.subject=subject
+        self.emp_id=emp_id
+
+    def introduce(self):
+        print(f"Hello, I'm professor {self.name} and I teach {self.subject}")
+
+    def assign(self,student,grade):
+        print(f"Teacher {self.name} assigned grade {grade} to the student {student}")
+
+    def role(self):
+        return "Teacher"
+
+class Students(Person):
+
+    def __init__(self, name, age,student_id,grade_level,course):
+        super().__init__(name, age)
+        self.student_id=student_id
+        self.grade_level=grade_level
+        self.course=course
+
+    def enroll(self):
+        print(f"The student {self.name} enrolled in the course {self.course}")
+
+    def submit_assignment(self,assignment_name):
+        print(f"Student: {self.name} | Submitted Assignment: {assignment_name} ")
+
+    def role(welf):
+        return "Student"
+
+stu=Students("Selva",18,777,"A","Cybersecurity")
+tea=Teacher("Cristiano",41,"Physics",7)
+print("="*50)
+print("INTRODUCTION".center(50," "))
+print("="*50)
+tea.introduce()
+stu.introduce()
+print("="*50,"\n")
+print("="*50)
+print("ROLE".center(50," "))
+print("="*50)
+print(stu.role())
+print(tea.role())
+print("="*50,"\n")
+stu.submit_assignment("Rotational Motion")
+tea.assign("Selva","A")
+
+#Task - A product catalog stores generic product details and extends electronics with warranty information and clothing with size information.
+
+class Product:
+
+    def __init__(self,name,brand,category,stock,price):
+        self.name=name
+        self.category=category
+        self.stock=stock
+        self.price=price
+        self.brand=brand
+
+    def show(self):
+        pass
+
+class Electronics(Product):
+
+    def __init__(self, name,brand,category, stock, price,warranty):
+        super().__init__(name,brand,category, stock, price)
+        self.warranty=warranty
+
+    def show(self):
+        print("-"*50)
+        print("PRODUCT DETAILS".center(50," "))
+        print("-"*50)
+        print(f"Category: {self.category}")
+        print(f"Item name: {self.name}")
+        print(f"Stock Available: {self.stock}")
+        print(f"Price : ${self.price}")
+        print(f"Warranty: {self.warranty} years")
+        print("-"*50)
+        print("\n")
+
+class Cloth(Product):
+
+    def __init__(self, name,brand,category, stock, price,size):
+        super().__init__(name,brand,category, stock, price)
+        self.size=size
+
+    def show(self):
+        print("-"*50)
+        print("PRODUCT DETAILS".center(50," "))
+        print("-"*50)
+        print(f"Category: {self.category}")
+        print(f"Item name: {self.name}")
+        print(f"Stock Available: {self.stock}")
+        print(f"Price : ${self.price}")
+        print(f"Size: {self.size} ")
+        print("-"*50)
+        print("\n")
+
+elec=Electronics("Television","Samsung","Electronic",45,4000,5)
+clo=Cloth("Shirt","Peter England","Cloth",30,250,"M")
+
+elec.show()
+clo.show()
