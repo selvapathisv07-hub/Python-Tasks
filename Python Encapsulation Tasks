@@ -1,0 +1,160 @@
+#Task - A student portal must prevent marks from being modified directly and allow updates only through validation methods.
+
+class Student:
+
+    def __init__(self,i,name,mark):
+        self.i=i
+        self.name=name
+        self.__mark=mark
+
+    def get_marks(self):
+        print(f"Studend ID: {self.i}")
+        print(f"Name: {self.name}")
+        print(f"Mark: {self.__mark}")
+
+    def update_mark(self,m):
+        if 0<=m<=100:
+            self.__mark=m
+            print("Mark has been updated successfully")
+        else:
+            print("Invaid mark")
+
+s1=Student(107,"Selva",76)
+s1.get_marks()
+s1.update_mark(89)
+#s1.__mark
+s1.get_marks()
+
+#Task - A banking application must hide the balance field and expose only deposit, withdraw, and balance-check operations.
+
+class Account:
+
+    def __init__(self,Acc_num,name,bal):
+        self.Acc_num=Acc_num
+        self.name=name
+        self.__bal=bal
+
+    def deposit(self,amount):
+        self.__bal+=amount
+        print(f"Account Number: {self.Acc_num}")
+        print(f"Name: {self.name}")
+        print("Amount has been deposited successfully")
+
+    def withdraw(self,amount):
+        if amount<=self.__bal:
+            self.__bal-=amount
+            print(f"Account Number: {self.Acc_num}")
+            print(f"Name: {self.name}")
+            print("Amount has been withdrawn successfully")
+
+    def show_bal(self):
+        print(f"Current Balance: {self.__bal}")
+
+a1=Account(456789087,"Selva",78000)
+a1.deposit(56000)
+a1.withdraw(7000)
+a1.show_bal()
+#a1.bal
+
+#Task - An employee payroll system must keep salary private and permit changes only through authorized methods.
+
+class Employee:
+
+    def __init__(self,name,age,sal):
+        self.name=name
+        self.age=age
+        self.__sal=sal
+
+    def update_sal(self,increment):
+        self.__sal+=increment
+
+    def show_sal(self):
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Salary: {self.__sal}")
+
+e1=Employee("Selva",18,80000)
+e1.update_sal(90000)
+e1.show_sal()
+#e1.__sal
+
+#Task -  A mobile inventory app must prevent direct edits to product price and enforce updates through pricing rules.
+
+class Product:
+
+    def __init__(self,name,brand,stock,price):
+        self.name=name
+        self.brand=brand
+        self.stock=stock
+        self.__price=price
+
+    def buy(self,quantity):
+        self.stock-=quantity
+        print(f"Product Name: {self.name}")
+        print(f"Brand: {self.brand}")
+        print(f"Price: {self.__price}")
+
+    def update_price(self,new):
+        self.__price=new
+        print("Price has been updated successfully")
+
+    def show_price(self):
+        print(f"Price : {self.__price}")
+
+p1=Product("IQOO Z10X","IQOO",20,30000)
+p1.buy(1)
+p1.show_price()
+p1.update_price(28000)
+p1.show_price()
+p1.__price=50000
+p1.show_price()
+
+#Task - A car showroom must expose price information through accessor methods while preventing arbitrary direct modification.
+
+class Car:
+
+    def __init__(self,brand,model,price):
+        self.brand=brand
+        self.model=model
+        self.__price=price
+
+    def update_car_price(self,new_price):
+        self.__price=new_price
+        print("Car price has been updated successfully")
+
+    def show_car_price(self):
+        print(f"Price: Rs.{self.__price}")
+
+    def details(self):
+        print(f"Car brand: {self.brand}")
+        print(f"Model: {self.model}")
+        print(f"Price: Rs.{self.__price}")
+
+c1=Car("BMW","M4 Competition",15000000)
+c1.update_car_price(16000000)
+c1.show_car_price()
+c1.details()
+c1.__price=15500000
+c1.show_car_price()
+
+#Task - A hospital system must keep patient records private and reveal only approved information through service methods.
+
+class Patient:
+
+    def __init__(self,patient_id,name,problem,doc):
+        self.patient_id=patient_id
+        self.__name=name
+        self.__problem=problem
+        self.doc=doc
+
+    def patient_details(self):
+        print(f"Patient ID: {self.patient_id}")
+        print(f"Patient Name: {self.__name}")
+        print(f"Reason: {self.__problem}")
+        print(f"Doctor incharge: {self.doc}")
+
+b1=Patient(32423,"Surya","Broken hand","Yoji")
+#print(b1.__name)
+#print(b1.__problem)
+print(b1.doc)
+b1.patient_details()
