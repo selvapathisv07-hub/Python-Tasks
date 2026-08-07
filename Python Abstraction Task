@@ -1,0 +1,248 @@
+from abc import ABC, abstractmethod
+
+#Task - A zoo app defines a generic animal concept and requires every animal type to provide its own sound behavior.
+
+class Animal(ABC):
+
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+
+    def sound(self):
+        print(f"The dog barks : woof! Woof!")
+
+class Cat(Animal):
+
+    def sound(self):
+        print(f"The cat sounds : Meow! Meow!")
+
+class Lion(Animal):
+
+    def sound(self):
+        print(f"The lion roars : Aaaarrrrhhhh!!!")
+
+lion=Lion()
+dog=Dog()
+cat=Cat()
+lion.sound()
+dog.sound()
+cat.sound()
+
+#Task - A graphics system defines a generic shape contract and requires each concrete shape to implement area calculation.
+
+class Shape(ABC):
+
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+
+    def area(self,radius):
+        print(f"The area of the circle of radius {radius} is {(22/7)*(radius**2)}m²")
+
+class Rectangle(Shape):
+
+    def area(self,l,b):
+        print(f"The area of the rectangle of length {l} and width {b} is {l*b}m²")
+
+class Triangle(Shape):
+
+    def area(self,height,base):
+        print(f"The area of the triangle of height {height} and base {base} is {(1/2)*base*height}m²")
+
+ci=Circle()
+re=Rectangle()
+tri=Triangle()
+ci.area(8)
+re.area(5,6)
+tri.area(4,6)
+
+#Task - A vehicle control system defines common operations such as start and stop but lets bikes and cars implement them differently.
+
+class Vehicle(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+class Bike(Vehicle):
+
+    def start(self):
+        print("The bike has been started by self start")
+
+class Car(Vehicle):
+
+    def start(self):
+        print("The car has been started by start button")
+
+class Truck(Vehicle):
+
+    def start(self):
+        print("The truck has been started by turning the keys")
+
+bike=Bike()
+car=Car()
+truck=Truck()
+
+bike.start()
+car.start()
+truck.start()
+
+#Task - A company payroll system defines salary calculation abstractly and lets fulltime and contract employees compute salary differently.
+
+class Employee(ABC):
+    def __init__(self,emp_id,name):
+        self.emp_id=emp_id
+        self.name=name
+
+    @abstractmethod
+    def calculate_salary(self):
+        pass
+
+class FullTimeEmployee(Employee):
+    def __init__(self,emp_id,name,monthly_salary, bonus):
+        super().__init__(emp_id, name)
+        self.monthly_salary=monthly_salary
+        self.bonus=bonus
+
+    def calculate_salary(self):
+        return self.monthly_salary + self.bonus
+
+class ContractEmployee(Employee):
+    def __init__(self,emp_id,name,hourly_rate,hours_worked):
+        super().__init__(emp_id, name)
+        self.hourly_rate=hourly_rate
+        self.hours_worked=hours_worked
+
+    def calculate_salary(self):
+        return self.hourly_rate * self.hours_worked
+
+
+
+employees = [FullTimeEmployee(emp_id=101, name="Alice", monthly_salary=5000, bonus=500),ContractEmployee(emp_id=102, name="Bob", hourly_rate=45.0, hours_worked=120)]
+
+
+for emp in employees:
+    print(f"ID: {emp.emp_id} | Name: {emp.name} | Pay: ${emp.calculate_salary()}")
+
+#Task -  A payment framework defines a payment contract and allows UPI, credit card, and wallet implementations.
+
+class Payment(ABC):
+
+    @abstractmethod
+    def pay(self):
+        pass
+
+class UPI(Payment):
+
+    def pay(self):
+        print("The payment has been paid successfully through UPI")
+
+class Credit_card(Payment):
+
+    def pay(self):
+        print("The payment has been paid successfully through Credit card")
+
+class Wallet(Payment):
+
+    def pay(self):
+        print("The payment has been paid successfully though cash")
+
+upi=UPI()
+credit=Credit_card()
+cash=Wallet()
+
+upi.pay()
+credit.pay()
+cash.pay()
+
+#Task - A smart-home platform defines a device interface and lets lights, fans, and AC units implement their own behavior.
+
+class SmartDevice(ABC):
+    def __init__(self, name: str):
+        self.name = name
+
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    @abstractmethod
+    def turn_off(self):
+        pass
+
+
+class Light(SmartDevice):
+    def turn_on(self):
+        return f"{self.name}: Light turned on with 100% brightness"
+
+    def turn_off(self):
+        return f"{self.name}: Light turned off"
+
+
+class Fan(SmartDevice):
+    def turn_on(self):
+        return f"{self.name}: Fan started spinning at medium speed"
+
+    def turn_off(self):
+        return f"{self.name}: Fan stopped"
+
+
+class AirConditioner(SmartDevice):
+    def turn_on(self):
+        return f"{self.name}: AC turned on set to 22°C"
+
+    def turn_off(self):
+        return f"{self.name}: AC powered off"
+
+
+devices = [Light("Living Room Light"),Fan("Ceiling Fan"),AirConditioner("Bedroom AC")]
+
+for device in devices:
+    print(device.turn_on())
+    print(device.turn_off())
+
+#Task - A notification service should call send() on email, SMS, and push-notification objects and dispatch through different channels.
+
+class NotificationChannel(ABC):
+
+    @abstractmethod
+    def send(self,recipient,message):
+        pass
+
+
+class EmailNotification(NotificationChannel):
+
+    def send(self,recipient,message):
+        return f"Sending Email to {recipient}: {message}"
+
+
+class SMSNotification(NotificationChannel):
+
+    def send(self,recipient,message):
+        return f"Sending SMS to {recipient}: {message}"
+
+
+class PushNotification(NotificationChannel):
+
+    def send(self,recipient,message):
+        return f"Sending Push Notification to {recipient}: {message}"
+
+
+class NotificationService:
+
+    def __init__(self, channels):
+        self.channels = channels
+
+    def notify_all(self,recipient,message):
+        for channel in self.channels:
+            print(channel.send(recipient, message))
+
+
+channels = [EmailNotification(),SMSNotification(),PushNotification()]
+
+service = NotificationService(channels)
+service.notify_all("user@example.com", "Your order has been shipped!")
+
